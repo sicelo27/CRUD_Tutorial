@@ -47,7 +47,7 @@ namespace CRUDTut.Pages.Admin.Products
                 ProductDto.ImageFile.CopyTo(stream);
             }
 
-            Product product = new Product()
+            Product product = new()
             {
                 Name = ProductDto.Name,
                 Brand = ProductDto.Brand,
@@ -61,7 +61,6 @@ namespace CRUDTut.Pages.Admin.Products
             context.Products.Add(product);
             context.SaveChanges();
 
-            //clear the form
             ProductDto.Name = "";
             ProductDto.Brand = "";
             ProductDto.Price = 0;
